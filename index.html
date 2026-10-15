@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Bài 6 · Tính theo PTHH</title>
+<title>Khoa học tự nhiên 8 · Ôn tập Chương I</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap">
 <style>
-/* ==========================================
-   LIQUID GLASS DESIGN SYSTEM (macOS/iOS Style)
-   ========================================== */
+
 :root {
   color-scheme: light;
   --bg: #F4F7FC;
@@ -27,18 +25,6 @@
   --amber-soft: rgba(217, 119, 6, 0.1);
   --good: #059669;
   --good-soft: rgba(5, 150, 105, 0.1);
-  --bad: #DC2626;
-  --bad-soft: rgba(220, 38, 38, 0.1);
-  --liquid: rgba(59, 130, 246, 0.15);
-  --liquid2: rgba(16, 185, 129, 0.15);
-  --ppt: #FFFFFF;
-  --glass: rgba(148, 163, 184, 0.3);
-  --metal: #64748B;
-  --screen: #0F172A;
-  --digit: #34D399;
-  --h: #3B82F6;
-  --o: #EF4444;
-  --hx: #0F172A;
   --glass-border: 1px solid rgba(255, 255, 255, 0.8);
   --shadow-glass: 0 10px 30px 0 rgba(31, 38, 135, 0.07);
   --shadow-hover: 0 20px 40px 0 rgba(31, 38, 135, 0.12);
@@ -65,18 +51,6 @@
     --amber-soft: rgba(245, 158, 11, 0.2);
     --good: #10B981;
     --good-soft: rgba(16, 185, 129, 0.2);
-    --bad: #EF4444;
-    --bad-soft: rgba(239, 68, 68, 0.2);
-    --liquid: rgba(59, 130, 246, 0.25);
-    --liquid2: rgba(16, 185, 129, 0.25);
-    --ppt: #F9FAFB;
-    --glass: rgba(75, 85, 99, 0.4);
-    --metal: #9CA3AF;
-    --screen: #020617;
-    --digit: #34D399;
-    --h: #60A5FA;
-    --o: #F87171;
-    --hx: #030712;
     --glass-border: 1px solid rgba(255, 255, 255, 0.1);
     --shadow-glass: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
     --shadow-hover: 0 20px 40px 0 rgba(0, 0, 0, 0.7);
@@ -100,18 +74,6 @@
   --amber-soft: rgba(245, 158, 11, 0.2);
   --good: #10B981;
   --good-soft: rgba(16, 185, 129, 0.2);
-  --bad: #EF4444;
-  --bad-soft: rgba(239, 68, 68, 0.2);
-  --liquid: rgba(59, 130, 246, 0.25);
-  --liquid2: rgba(16, 185, 129, 0.25);
-  --ppt: #F9FAFB;
-  --glass: rgba(75, 85, 99, 0.4);
-  --metal: #9CA3AF;
-  --screen: #020617;
-  --digit: #34D399;
-  --h: #60A5FA;
-  --o: #F87171;
-  --hx: #030712;
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
   --shadow-glass: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
   --shadow-hover: 0 20px 40px 0 rgba(0, 0, 0, 0.7);
@@ -119,7 +81,6 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-padding-top: env(safe-area-inset-top, 0px); }
 body {
   margin: 0; padding: 0;
   font-family: var(--font-body); font-size: 16px; line-height: 1.6;
@@ -129,860 +90,97 @@ body {
     radial-gradient(at 90% 90%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-img { max-width: 100%; }
-[hidden]:not([hidden=until-found i]) { display: none !important; }
 
-.wrap { max-width: 960px; margin: 0 auto; padding-inline: 20px; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.25; text-wrap: balance; margin: 0; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.15rem; }
+.wrap { max-width: 800px; margin: 0 auto; padding-inline: 20px; width: 100%; }
+h1, h2 { font-family: var(--font-display); line-height: 1.25; margin: 0; }
 p { margin: 0; }
-sub { font-size: .72em; line-height: 0; }
-button { font: inherit; cursor: pointer; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
 
-/* Header & Top Bar */
-header.top { padding-block: 36px 20px; }
-.eyebrow { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
-header.top h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-top: 6px; }
-header.top h1 .lesson { color: var(--accent); text-shadow: 0 0 20px var(--accent-soft); }
-.law { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-family: var(--font-display); font-size: clamp(1rem, 3vw, 1.25rem); }
-.law .chip {
-  background: var(--surface);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border: var(--glass-border); border-radius: 999px; padding: 6px 16px;
-  box-shadow: var(--shadow-glass), var(--inner-glow);
-}
-.law .eq { color: var(--accent); font-weight: 700; }
+header.top { padding-block: 48px 24px; text-align: center; }
+.eyebrow { font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+header.top h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin-top: 8px; }
+header.top h1 .highlight { color: var(--accent); text-shadow: 0 0 20px var(--accent-soft); }
+.lead { color: var(--muted); margin-top: 10px; font-size: 1.05rem; }
 
-/* Tabs */
-nav.tabs {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
-  background: var(--surface);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-}
-nav.tabs .wrap { display: flex; flex-wrap: wrap; gap: 2px 6px; padding-block: 4px; }
-nav.tabs button {
-  flex: none; background: none; border: 0; border-bottom: 3px solid transparent;
-  color: var(--muted); padding: 12px 14px; font-weight: 600; white-space: nowrap;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 8px 8px 0 0;
-}
-nav.tabs button:hover { color: var(--ink); background: var(--accent-soft); }
-nav.tabs button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); background: var(--accent-soft); }
+main { padding-block: 10px 40px; display: grid; gap: 20px; }
 
-main { padding-block: 28px 60px; }
-section.panel { display: grid; gap: 24px; }
-
-/* Cards (Liquid Glass Effect) */
 .card {
   background: var(--surface);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border: var(--glass-border);
   box-shadow: var(--shadow-glass), var(--inner-glow);
   border-radius: var(--r);
-  padding: 24px; display: grid; gap: 16px; min-width: 0;
+  padding: 28px; display: grid; gap: 16px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none; color: inherit;
 }
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-hover), var(--inner-glow);
+  border-color: var(--accent);
 }
-.lead { color: var(--muted); max-width: 68ch; }
-.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; }
-
-.statement {
-  background: var(--accent-soft);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--accent);
-  border-radius: var(--r); padding: 18px 20px; font-weight: 600; font-size: 1.05rem;
-}
-.formula {
-  font-family: var(--font-display); font-size: 1.25rem; text-align: center;
-  padding: 14px; background: var(--surface);
-  border: 1px dashed var(--line-solid); border-radius: 14px;
-  box-shadow: var(--inner-glow);
-}
-ol.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; counter-reset: s; }
-ol.steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
-ol.steps li::before {
-  content: counter(s); width: 34px; height: 34px; border-radius: 50%;
-  background: var(--accent); color: var(--accent-ink);
-  display: grid; place-items: center; font-weight: 700; font-family: var(--font-display);
-  box-shadow: 0 4px 12px var(--accent-soft);
-}
-.note {
-  background: var(--amber-soft); border: 1px solid rgba(217, 119, 6, 0.2);
-  border-radius: 14px; padding: 14px 16px;
-}
-.note b { color: var(--amber); }
-ul.clean { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .tag {
   display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
-  padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+  padding: 4px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
 }
-.tag.th { background: var(--amber-soft); color: var(--amber); }
-.tag.vd { background: var(--bad-soft); color: var(--bad); }
+.card h2 { font-size: 1.35rem; }
+.card p { color: var(--muted); }
+.card-footer { display: flex; justify-content: flex-end; align-items: center; font-weight: 600; color: var(--accent); }
 
-/* Buttons */
-.btn {
-  border: var(--glass-border);
-  background: var(--surface);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  color: var(--ink); border-radius: 12px; padding: 10px 18px; font-weight: 600;
-  box-shadow: var(--shadow-glass), var(--inner-glow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.btn:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover), var(--inner-glow);
-}
-.btn.primary {
-  background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
-  box-shadow: 0 8px 20px var(--accent-soft), var(--inner-glow);
-}
-.btn.primary:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 12px 25px var(--accent-soft), var(--inner-glow);
-}
-.btn:disabled { opacity: .5; cursor: default; transform: none !important; box-shadow: none !important; }
-.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-
-/* Lesson specific styles */
-.ratio { display: grid; gap: 16px; }
-.ratio input[type=range] { width: 100%; accent-color: var(--accent); }
-.rgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; text-align: center; }
-.rgrid div {
-  border: var(--glass-border); border-radius: 14px; padding: 14px 10px;
-  background: var(--surface); backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-glass);
-}
-.rgrid .f { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
-.rgrid .v { font-variant-numeric: tabular-nums; color: var(--accent); font-weight: 700; }
-.rgrid .s { font-size: .85rem; color: var(--muted); }
-
-.ftable { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 16px; }
-.ftable div {
-  border: var(--glass-border); border-radius: 14px; padding: 16px; text-align: center;
-  background: var(--surface); backdrop-filter: blur(12px); box-shadow: var(--shadow-glass);
-}
-.ftable .formula { border: 0; padding: 4px; background: none; box-shadow: none; }
-
-.gsteps { display: grid; gap: 14px; }
-.gstep {
-  display: grid; gap: 10px; border: var(--glass-border); border-radius: 14px; padding: 16px;
-  background: var(--surface); backdrop-filter: blur(12px); box-shadow: var(--shadow-glass);
-}
-.gstep.ok { border-color: var(--good); background: var(--good-soft); }
-.gstep .lbl { font-weight: 600; }
-.gstep input {
-  width: 8em; padding: 10px 12px; border: 1px solid var(--line-solid); border-radius: 10px;
-  background: var(--surface); color: var(--ink); font: inherit;
-}
-
-.drill { font-family: var(--font-display); font-size: clamp(1.1rem, 3.2vw, 1.4rem); text-align: center; padding: 14px 0; }
-.mtable { border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .92rem; margin: 0 auto; }
-.mtable td, .mtable th { border: 1px solid var(--line-solid); padding: 8px 12px; text-align: center; }
-.mtable th { color: var(--muted); font-weight: 600; background: var(--accent-soft); }
-
-/* Balancing & Lists */
-.eqlist { display: flex; flex-wrap: wrap; gap: 8px; }
-.eqlist button {
-  min-width: 44px; border: var(--glass-border); background: var(--surface); color: var(--ink);
-  border-radius: 10px; padding: 6px 12px; font-weight: 600; font-variant-numeric: tabular-nums;
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-}
-.eqlist button.cur { border-color: var(--accent); color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent), var(--shadow-glass); }
-.eqlist button.done { background: var(--good-soft); border-color: var(--good); color: var(--good); }
-
-.msg { border-radius: 12px; padding: 12px 16px; font-weight: 500; backdrop-filter: blur(10px); }
-.msg.good { background: var(--good-soft); color: var(--good); border: 1px solid var(--good); }
-.msg.bad { background: var(--bad-soft); color: var(--bad); border: 1px solid var(--bad); }
-.msg.info { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber); }
-
-/* Problems & Quiz */
-.prob { display: grid; gap: 12px; padding-block: 16px; border-top: 1px solid var(--line-solid); }
-.prob:first-of-type { border-top: 0; padding-top: 0; }
-.prob input { width: 8em; padding: 10px 12px; border: 1px solid var(--line-solid); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; }
-
-.q { display: grid; gap: 12px; padding-block: 18px; border-top: 1px solid var(--line-solid); }
-.q:first-child { border-top: 0; padding-top: 0; }
-.q .qh { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
-.q .num { font-family: var(--font-display); font-weight: 700; color: var(--accent); }
-.opts { display: grid; gap: 10px; }
-.opts label {
-  display: flex; gap: 12px; align-items: flex-start;
-  border: var(--glass-border); border-radius: 12px; padding: 12px 14px; cursor: pointer;
-  background: var(--surface); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-glass); transition: all 0.2s;
-}
-.opts label:hover { border-color: var(--accent); transform: translateX(4px); }
-.opts input { margin-top: 5px; accent-color: var(--accent); }
-.opts label.right { border-color: var(--good); background: var(--good-soft); }
-.opts label.wrong { border-color: var(--bad); background: var(--bad-soft); }
-.explain { font-size: .94rem; color: var(--muted); }
-.score { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.score .big { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; text-shadow: 0 0 20px var(--accent-soft); }
-
-details {
-  border: var(--glass-border); border-radius: 14px; background: var(--surface);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  padding: 14px 18px; box-shadow: var(--shadow-glass);
-  transition: all 0.3s;
-}
-details[open] { border-color: var(--accent); box-shadow: var(--shadow-hover); }
-details summary { cursor: pointer; font-weight: 600; }
-details p { margin-top: 10px; color: var(--muted); }
-footer { color: var(--muted); font-size: .85rem; padding-block: 20px 40px; text-align: center; }
-
-/* Student Bar */
-.student {
-  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 16px; align-items: end;
-  background: var(--surface);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border: var(--glass-border); border-radius: var(--r); padding: 18px 20px;
-  box-shadow: var(--shadow-glass), var(--inner-glow);
-}
-.field { display: grid; gap: 6px; min-width: 0; }
-.field label { font-size: .8rem; font-weight: 600; color: var(--muted); }
-.field input, .field select, textarea {
-  font: inherit; padding: 10px 12px; border: 1px solid var(--line-solid); border-radius: 10px; background: var(--surface); color: var(--ink);
-  box-shadow: var(--inner-glow);
-}
-.field.name { flex: 2 1 240px; } .field.name input { width: 100%; }
-.field.cls { flex: 0 1 120px; } .field.cls input { width: 100%; }
-.meter { flex: 1 1 220px; display: grid; gap: 8px; }
-.meter .lbl { display: flex; justify-content: space-between; font-size: .85rem; color: var(--muted); font-weight: 600; }
-.meter .lbl b { color: var(--accent); font-variant-numeric: tabular-nums; }
-.bar { height: 12px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line-solid); overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
-.bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--good)); border-radius: 999px; transition: width .5s cubic-bezier(0.4, 0, 0.2, 1); }
-.prog { display: grid; gap: 10px; }
-.prog .it { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; align-items: center; }
-.prog .it .bar { grid-column: 1 / -1; height: 8px; }
-.prog .it span:last-of-type { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 600; }
-.codebox {
-  font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85rem; word-break: break-all;
-  background: var(--screen); color: var(--digit); border: 1px dashed var(--accent); border-radius: 12px; padding: 14px;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
-}
-.donebtn { justify-self: start; }
-.donebtn.on { background: var(--good-soft); border-color: var(--good); color: var(--good); }
-
-/* Teacher Board */
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
-.tile {
-  border: var(--glass-border); border-radius: 12px; padding: 14px 16px; background: var(--surface);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: var(--shadow-glass);
-}
-.tile .v { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent); }
-.tile .k { font-size: .8rem; color: var(--muted); font-weight: 600; }
-table.res { border-collapse: collapse; width: 100%; min-width: 780px; font-variant-numeric: tabular-nums; font-size: .92rem; }
-table.res th, table.res td { border-bottom: 1px solid var(--line-solid); padding: 10px 10px; text-align: left; vertical-align: middle; }
-table.res th { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-table.res td.n { text-align: right; }
-.pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: .8rem; font-weight: 700; }
-.pill.g { background: var(--good-soft); color: var(--good); }
-.pill.m { background: var(--amber-soft); color: var(--amber); }
-.pill.b { background: var(--bad-soft); color: var(--bad); }
-.minibar { display: inline-block; width: 60px; height: 8px; border-radius: 999px; background: var(--line-solid); vertical-align: middle; margin-right: 8px; overflow: hidden; }
-.minibar i { display: block; height: 100%; background: var(--accent); }
-textarea { width: 100%; min-height: 120px; resize: vertical; }
-.linkbtn { background: none; border: 0; color: var(--bad); font-weight: 600; padding: 2px 6px; cursor: pointer; }
-.linkbtn:hover { text-decoration: underline; }
-
-.bonusrows { display: grid; gap: 10px; }
-.bonusrows input { width: 5.5em; padding: 8px 10px; border: 1px solid var(--line-solid); border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; text-align: center; }
-nav.tabs button.teacher { color: var(--amber); }
-@media (prefers-reduced-motion: reduce) { .bub, .bubin { animation-duration: 4s; } }
+footer { color: var(--muted); font-size: .85rem; padding-block: 20px; text-align: center; }
 </style>
 </head>
 <body>
 
 <header class="top wrap">
-  <div class="eyebrow">Khoa học tự nhiên 8 · Chương I: Phản ứng hóa học</div>
-  <h1><span class="lesson">Bài 6.</span> Tính theo phương trình hóa học</h1>
-  <div class="law"><span class="chip">m, V</span><span class="eq">→</span><span class="chip">n<sub>đã biết</sub></span><span class="eq">→</span><span class="chip">n<sub>cần tìm</sub></span><span class="eq">→</span><span class="chip">m, V</span></div>
-  <div class="student" id="studentBar">
-    <div class="field name"><label for="stName">Họ và tên học sinh</label><input id="stName" autocomplete="off" placeholder="Ví dụ: Nguyễn Văn An" maxlength="60"></div>
-    <div class="field cls"><label for="stClass">Lớp</label><input id="stClass" autocomplete="off" placeholder="8A" maxlength="10"></div>
-    <div class="meter"><div class="lbl"><span>Mức hoàn thành</span><b id="pctTop">0%</b></div><div class="bar"><i id="barTop"></i></div></div>
-    <button class="btn primary" id="goSubmit">Nộp kết quả →</button>
-  </div>
+  <div class="eyebrow">Khoa học tự nhiên 8 - Github by chisaki167</div>
+  <h1>Cổng Ôn Tập <span class="highlight">Chương I</span></h1>
+  <p class="lead">Chọn bài học em muốn ôn tập hoặc làm bài kiểm tra tiến độ</p>
 </header>
 
-<nav class="tabs" aria-label="Các phần ôn tập">
-  <div class="wrap" role="tablist">
-    <button role="tab" data-tab="kienthuc" aria-selected="true">1. Kiến thức</button>
-    <button role="tab" data-tab="tungbuoc" aria-selected="false">2. Giải từng bước</button>
-    <button role="tab" data-tab="congthuc" aria-selected="false">3. Luyện công thức</button>
-    <button role="tab" data-tab="baitap" aria-selected="false">4. Bài tập vận dụng</button>
-    <button role="tab" data-tab="tracnghiem" aria-selected="false">5. Trắc nghiệm</button>
-    <button role="tab" data-tab="thuctien" aria-selected="false">6. Liên hệ thực tiễn</button>
-    <button role="tab" data-tab="nopbai" aria-selected="false">7. Nộp kết quả</button>
-    <button role="tab" data-tab="giaovien" aria-selected="false" class="teacher" id="teacherTab" hidden>Giáo viên</button>
-  </div>
-</nav>
-
 <main class="wrap">
-
-<!-- 1. KIẾN THỨC -->
-<section class="panel" id="p-kienthuc">
-  <div class="card">
-    <span class="eyebrow">Ôn lại: các công thức chuyển đổi</span>
-    <h2>Số mol, khối lượng và thể tích khí</h2>
-    <div class="ftable">
-      <div><div class="formula">n = <sup>m</sup>⁄<sub>M</sub></div><span class="explain">Tính số mol từ khối lượng</span></div>
-      <div><div class="formula">m = n × M</div><span class="explain">Tính khối lượng từ số mol</span></div>
-      <div><div class="formula">V = n × 24,79</div><span class="explain">Thể tích khí (L) ở điều kiện chuẩn</span></div>
-      <div><div class="formula">n = <sup>V</sup>⁄<sub>24,79</sub></div><span class="explain">Tính số mol khí từ thể tích</span></div>
+  <!-- Bài 5 -->
+  <a href="bai5.html" class="card">
+    <div class="card-header">
+      <span class="tag">Bài 5</span>
+      <span class="muted">Thí nghiệm ảo & Cân bằng PTHH</span>
     </div>
-    <p class="explain">n: số mol (mol) · m: khối lượng (g) · M: khối lượng mol (g/mol) · V: thể tích khí (L). Điều kiện chuẩn (đkc): 25 °C và 1 bar, khi đó 1 mol khí bất kì chiếm 24,79 L.</p>
-    <div class="table-wrap"><table class="mtable"><tr><th>Nguyên tố</th><td>H</td><td>C</td><td>N</td><td>O</td><td>Na</td><td>Mg</td><td>Al</td><td>S</td><td>Cl</td><td>K</td><td>Ca</td><td>Fe</td><td>Cu</td><td>Zn</td></tr><tr><th>Khối lượng nguyên tử</th><td>1</td><td>12</td><td>14</td><td>16</td><td>23</td><td>24</td><td>27</td><td>32</td><td>35,5</td><td>39</td><td>40</td><td>56</td><td>64</td><td>65</td></tr></table></div>
-  </div>
+    <h2>Định luật bảo toàn khối lượng và phương trình hóa học</h2>
+    <p>Tìm hiểu định luật bảo toàn khối lượng, thực hành thí nghiệm ảo cân khối lượng chất, luyện cân bằng 12 phương trình và trắc nghiệm kiến thức.</p>
+    <div class="card-footer">Vào học bài 5 →</div>
+  </a>
 
-  <div class="grid2">
-    <div class="card">
-      <span class="eyebrow">I. Tính lượng chất trong phương trình hóa học</span>
-      <h2>Các bước giải</h2>
-      <ol class="steps">
-        <li><div><b>Viết phương trình hóa học</b> của phản ứng (nhớ cân bằng).</div></li>
-        <li><div><b>Tính số mol chất đã biết</b> theo khối lượng hoặc thể tích.</div></li>
-        <li><div><b>Dựa vào tỉ lệ hệ số trong PTHH</b>, tìm số mol chất cần tìm.</div></li>
-        <li><div><b>Tính khối lượng hoặc thể tích</b> chất cần tìm.</div></li>
-      </ol>
-      <div class="note"><b>Mẹo nhớ tỉ lệ:</b> n<sub>cần tìm</sub> = n<sub>đã biết</sub> × <sup>hệ số chất cần tìm</sup>⁄<sub>hệ số chất đã biết</sub></div>
+  <!-- Bài 6 -->
+  <a href="bai6.html" class="card">
+    <div class="card-header">
+      <span class="tag">Bài 6</span>
+      <span class="muted">Tính toán & Giải từng bước</span>
     </div>
-    <div class="card">
-      <span class="eyebrow">Ví dụ giải mẫu</span>
-      <h3>Cho 13 g zinc tác dụng hết với dung dịch hydrochloric acid. Tính thể tích khí hydrogen thu được ở đkc.</h3>
-      <ol class="steps">
-        <li><div>Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub></div></li>
-        <li><div>n<sub>Zn</sub> = 13 : 65 = 0,2 (mol)</div></li>
-        <li><div>Theo PTHH: 1 mol Zn tạo 1 mol H<sub>2</sub> ⇒ n<sub>H₂</sub> = n<sub>Zn</sub> = 0,2 (mol)</div></li>
-        <li><div>V<sub>H₂</sub> = 0,2 × 24,79 = <b>4,958 (L)</b></div></li>
-      </ol>
+    <h2>Tính theo phương trình hóa học</h2>
+    <p>Ôn tập công thức tính số mol, khối lượng, thể tích khí ở đkc (25°C, 1 bar), giải các bài toán theo 4 bước và luyện tập trắc nghiệm chuyên sâu.</p>
+    <div class="card-footer">Vào học bài 6 →</div>
+  </a>
+
+  <!-- Giáo viên quy đổi điểm -->
+  <a href="giaovien.html" class="card" style="border-color: var(--amber); background: rgba(217, 119, 6, 0.05);">
+    <div class="card-header">
+      <span class="tag" style="background: var(--amber-soft); color: var(--amber);">Dành cho giáo viên</span>
+      <span class="muted" style="color: var(--amber);">Quản lý & Tổng hợp điểm</span>
     </div>
-  </div>
-
-  <div class="card ratio">
-    <span class="eyebrow">Thử nghiệm tỉ lệ mol</span>
-    <h2>4Al + 3O<sub>2</sub> → 2Al<sub>2</sub>O<sub>3</sub></h2>
-    <p class="lead">Kéo thanh trượt để thay đổi số mol aluminium. Quan sát số mol oxygen cần dùng và số mol aluminium oxide tạo thành luôn theo tỉ lệ 4 : 3 : 2.</p>
-    <label for="alRange">Số mol Al: <b id="alVal">0,4</b> mol</label>
-    <input type="range" id="alRange" min="1" max="20" value="4">
-    <div class="rgrid">
-      <div><div class="f">Al</div><div class="v" id="rAl"></div><div class="s" id="mAl"></div></div>
-      <div><div class="f">O<sub>2</sub></div><div class="v" id="rO2"></div><div class="s" id="mO2"></div></div>
-      <div><div class="f">Al<sub>2</sub>O<sub>3</sub></div><div class="v" id="rAl2O3"></div><div class="s" id="mAl2O3"></div></div>
-    </div>
-    <p class="explain">Kiểm tra lại định luật bảo toàn khối lượng: m<sub>Al</sub> + m<sub>O₂</sub> = m<sub>Al₂O₃</sub>.</p>
-  </div>
-
-  <div class="grid2">
-    <div class="card">
-      <span class="eyebrow">Khi biết lượng cả hai chất tham gia</span>
-      <h2>Chất phản ứng hết, chất dư</h2>
-      <p>Với phản ứng aA + bB → sản phẩm, so sánh hai tỉ số <b>n<sub>A</sub> : a</b> và <b>n<sub>B</sub> : b</b>.</p>
-      <ul class="clean">
-        <li>Tỉ số nào <b>nhỏ hơn</b> thì chất đó phản ứng hết; chất còn lại dư.</li>
-        <li>Tính lượng sản phẩm <b>theo chất phản ứng hết</b>.</li>
-      </ul>
-      <p class="explain">Ví dụ: 0,2 mol Zn + 0,3 mol HCl. Zn: 0,2 : 1 = 0,2; HCl: 0,3 : 2 = 0,15 ⇒ HCl hết, Zn dư. n<sub>H₂</sub> = 0,3 : 2 = 0,15 mol.</p>
-    </div>
-    <div class="card">
-      <span class="eyebrow">II. Hiệu suất phản ứng</span>
-      <h2>Hiệu suất phản ứng</h2>
-      <div class="formula">H = <sup>lượng sản phẩm thực tế</sup>⁄<sub>lượng sản phẩm lí thuyết</sub> × 100%</div>
-      <ul class="clean">
-        <li>Lượng lí thuyết: tính theo PTHH (coi phản ứng xảy ra hoàn toàn).</li>
-        <li>Lượng thực tế: lượng thu được trong thí nghiệm hoặc sản xuất.</li>
-        <li>Hiệu suất luôn ≤ 100%.</li>
-      </ul>
-      <p class="explain">Ví dụ: nung 50 g CaCO<sub>3</sub>, theo lí thuyết thu được 28 g CaO nhưng thực tế chỉ thu được 22,4 g. H = 22,4 : 28 × 100% = 80%.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Ghi nhớ</h3>
-    <ul class="clean">
-      <li>Bốn bước: viết PTHH → tính n chất đã biết → tìm n chất cần tìm theo tỉ lệ hệ số → tính m hoặc V.</li>
-      <li>Ở đkc (25 °C, 1 bar), 1 mol khí chiếm 24,79 L.</li>
-      <li>Có chất dư: tính sản phẩm theo chất phản ứng hết.</li>
-      <li>Hiệu suất = thực tế : lí thuyết × 100%.</li>
-    </ul>
-    <button class="btn donebtn" id="ktDone">Em đã học xong phần kiến thức</button>
-  </div>
-</section>
-
-<!-- 2. GIẢI TỪNG BƯỚC -->
-<section class="panel" id="p-tungbuoc" hidden>
-  <div class="card">
-    <h2>Giải từng bước có hướng dẫn</h2>
-    <p class="lead">Làm lần lượt từng bước. Mỗi bước đúng thì bước tiếp theo mới mở ra. Làm đúng hết các bước là hoàn thành bài.</p>
-    <div class="eqlist" id="gList"></div>
-  </div>
-  <div class="card">
-    <div class="row" style="justify-content:space-between"><b id="gTitle"></b><span class="explain" id="gPos"></span></div>
-    <p id="gText"></p>
-    <div class="formula" id="gEq"></div>
-    <div class="gsteps" id="gSteps"></div>
-    <div class="row"><button class="btn" id="gNext">Bài tiếp →</button></div>
-  </div>
-</section>
-
-<!-- 3. LUYỆN CÔNG THỨC -->
-<section class="panel" id="p-congthuc" hidden>
-  <div class="card">
-    <h2>Luyện công thức n, m, V</h2>
-    <p class="lead">Mỗi lượt máy ra một câu ngẫu nhiên. Làm đúng 10 câu là hoàn thành phần này. Dùng bảng khối lượng nguyên tử ở phần Kiến thức để tính khối lượng mol.</p>
-    <div class="row"><span class="tag" id="drillCount">Đúng 0/10</span></div>
-    <div class="drill" id="drillQ"></div>
-    <div class="row" style="justify-content:center"><input id="drillA" inputmode="decimal" autocomplete="off" aria-label="Đáp số" style="width:8em;padding:10px 12px;border:1px solid var(--line-solid);border-radius:10px;background:var(--surface);color:var(--accent);font:inherit;font-weight:700;text-align:center"><span id="drillU"></span></div>
-    <div class="row" style="justify-content:center"><button class="btn primary" id="drillCheck">Kiểm tra</button><button class="btn" id="drillHint">Gợi ý</button><button class="btn" id="drillNew">Câu khác</button></div>
-    <div id="drillMsg" hidden></div>
-  </div>
-</section>
-
-<!-- 4. BÀI TẬP -->
-<section class="panel" id="p-baitap" hidden>
-  <div class="card">
-    <h2>Bài tập vận dụng</h2>
-    <p class="lead">Giải ra giấy theo bốn bước rồi nhập đáp số (dùng dấu phẩy hoặc dấu chấm đều được). Kết quả thể tích làm tròn đến 2 chữ số thập phân.</p>
-    <p class="note"><b>Lưu ý:</b> bài nào em bấm "Xem lời giải" trước khi tự làm đúng sẽ không được tính điểm.</p>
-    <div id="probs"></div>
-  </div>
-</section>
-
-<!-- 5. TRẮC NGHIỆM -->
-<section class="panel" id="p-tracnghiem" hidden>
-  <div class="card">
-    <h2>Trắc nghiệm</h2>
-    <p class="lead">13 câu theo ba mức: <span class="tag">Nhận biết</span> <span class="tag th">Thông hiểu</span> <span class="tag vd">Vận dụng</span>. Chọn đáp án rồi bấm <b>Nộp bài</b> ở cuối. <b>Chỉ lần nộp đầu tiên được tính điểm</b>, sau đó em có thể luyện lại thoải mái.</p>
-  </div>
-  <div class="card" id="quiz"></div>
-  <div class="card">
-    <div class="score"><button class="btn primary" id="submitQuiz">Nộp bài</button><button class="btn" id="resetQuiz" hidden>Luyện lại (không tính điểm)</button><span id="scoreOut" class="explain">Chưa nộp bài.</span></div>
-  </div>
-</section>
-
-<!-- 6. THỰC TIỄN -->
-<section class="panel" id="p-thuctien" hidden>
-  <div class="card">
-    <h2>Liên hệ thực tiễn</h2>
-    <p class="lead">Suy nghĩ câu trả lời trước, rồi bấm vào từng câu hỏi để xem giải thích.</p>
-  </div>
-  <details><summary>Vì sao các nhà máy phải tính theo phương trình hóa học trước khi sản xuất?</summary><p>Để biết cần bao nhiêu nguyên liệu cho một lượng sản phẩm mong muốn. Ví dụ lò vôi tính được: muốn có 56 tấn vôi sống CaO thì cần nung 100 tấn đá vôi CaCO<sub>3</sub> (theo lí thuyết). Tính trước giúp tiết kiệm nguyên liệu, chi phí và hạn chế chất thải.</p></details>
-  <details><summary>Vì sao trong thực tế hiệu suất phản ứng thường nhỏ hơn 100%?</summary><p>Phản ứng có thể xảy ra không hoàn toàn, nguyên liệu có lẫn tạp chất, có phản ứng phụ tạo chất khác, và sản phẩm bị hao hụt khi thu gom, lọc, chuyển bình.</p></details>
-  <details><summary>Túi khí ô tô bung ra trong tích tắc nhờ phản ứng nào? Người ta tính lượng hóa chất thế nào?</summary><p>Túi khí chứa sodium azide, khi va chạm bị phân hủy rất nhanh: 2NaN<sub>3</sub> → 2Na + 3N<sub>2</sub>. Khí nitrogen làm phồng túi. Nhà sản xuất tính theo PTHH để có lượng NaN<sub>3</sub> vừa đủ tạo ra thể tích khí cần thiết: quá ít túi không đủ căng, quá nhiều túi có thể bị nổ.</p></details>
-  <details><summary>Khi đun bếp, nếu thiếu không khí thì ngọn lửa có màu vàng, nhiều muội. Vì sao?</summary><p>Theo PTHH, nhiên liệu cần một lượng oxygen nhất định để cháy hoàn toàn thành carbon dioxide và nước. Thiếu oxygen thì nhiên liệu cháy không hoàn toàn, sinh muội than (carbon) và có thể sinh khí carbon monoxide rất độc. Vì vậy cần đun bếp ở nơi thoáng khí.</p></details>
-  <details><summary>Vì sao khi đốt than trong lò công nghiệp, người ta thường thổi dư không khí?</summary><p>Để than (chất cần sử dụng hết) phản ứng hết, cháy hoàn toàn, tỏa nhiều nhiệt và ít tạo khí carbon monoxide. Oxygen trong không khí là chất dư, có sẵn và không tốn tiền mua.</p></details>
-</section>
-
-<!-- 7. NỘP KẾT QUẢ -->
-<section class="panel" id="p-nopbai" hidden>
-  <div class="grid2">
-    <div class="card">
-      <h2>Mức hoàn thành của em</h2>
-      <p class="lead">Chỉ tính phần em <b>tự làm đúng</b>: không tính câu đã xem đáp án hoặc lời giải trước, trắc nghiệm tính lần nộp đầu. Kết quả được lưu trên máy em đang dùng. Hãy dùng cùng một máy và trình duyệt cho đến khi nộp kết quả.</p>
-      <div class="prog" id="progList"></div>
-    </div>
-    <div class="card">
-      <h2>Gửi kết quả cho giáo viên</h2>
-      <ol class="steps">
-        <li><div>Điền <b>họ tên</b> và <b>lớp</b> ở đầu trang.</div></li>
-        <li><div>Bấm <b>Tạo mã kết quả</b>.</div></li>
-        <li><div>Bấm <b>Sao chép mã</b> rồi gửi mã cho giáo viên qua nhóm lớp hoặc theo cách thầy cô hướng dẫn.</div></li>
-      </ol>
-      <div class="row"><button class="btn primary" id="makeCode">Tạo mã kết quả</button><button class="btn" id="copyCode" hidden>Sao chép mã</button></div>
-      <div id="codeMsg" hidden></div>
-      <div class="codebox" id="codeBox" hidden></div>
-      <p class="explain">Lưu ý: nếu em xóa tiến độ để làm lại, giáo viên sẽ thấy điều đó trong bảng kết quả. Mã chứa họ tên, lớp và kết quả các phần. Em có thể làm thêm rồi tạo mã mới; giáo viên sẽ giữ lại lần gửi mới nhất.</p>
-      <div class="row"><button class="btn" id="resetAll">Xóa tiến độ trên máy này</button></div>
-    </div>
-  </div>
-</section>
-
-<!-- GIÁO VIÊN -->
-<section class="panel" id="p-giaovien" hidden>
-  <div class="card">
-    <h2>Bảng theo dõi của giáo viên</h2>
-    <p class="lead">Mục này chỉ hiện với giáo viên (chủ trang). Dán các mã học sinh gửi vào ô dưới (dán nguyên đoạn tin nhắn cũng được, trang tự lọc ra các mã), rồi bấm <b>Thêm kết quả</b>.</p>
-    <textarea id="pasteBox" aria-label="Dán mã kết quả của học sinh" placeholder="Dán mã dạng KHTN8B6-…"></textarea>
-    <div class="row"><button class="btn primary" id="addCodes">Thêm kết quả</button><span class="explain" id="addMsg"></span></div>
-    <p class="explain" id="dbNote"></p>
-  </div>
-  <div class="card">
-    <h3>Quy đổi điểm cộng</h3>
-    <p class="explain">Học sinh đạt từ mức phần trăm nào thì được cộng bao nhiêu điểm. Dòng nào để trống sẽ được bỏ qua. Học sinh không đạt mức nào thì điểm cộng là 0.</p>
-    <div class="bonusrows">
-      <div class="row"><label for="bm0">Từ</label><input id="bm0" inputmode="numeric" autocomplete="off"><span>% trở lên → cộng</span><input id="bp0" inputmode="decimal" autocomplete="off" aria-label="Điểm cộng mức 1"><span>điểm</span></div>
-      <div class="row"><label for="bm1">Từ</label><input id="bm1" inputmode="numeric" autocomplete="off"><span>% trở lên → cộng</span><input id="bp1" inputmode="decimal" autocomplete="off" aria-label="Điểm cộng mức 2"><span>điểm</span></div>
-      <div class="row"><label for="bm2">Từ</label><input id="bm2" inputmode="numeric" autocomplete="off"><span>% trở lên → cộng</span><input id="bp2" inputmode="decimal" autocomplete="off" aria-label="Điểm cộng mức 3"><span>điểm</span></div>
-    </div>
-    <div class="row"><button class="btn primary" id="saveBonus">Lưu mức quy đổi</button><span class="explain" id="bonusMsg"></span></div>
-  </div>
-  <div class="card">
-    <div class="row" style="justify-content:space-between">
-      <div class="field"><label for="clsFilter">Lọc theo lớp</label><select id="clsFilter"><option value="">Tất cả các lớp</option></select></div>
-      <button class="btn" id="exportCsv">Tải bảng điểm (CSV)</button>
-    </div>
-    <div class="tiles" id="tiles"></div>
-    <div class="table-wrap"><table class="res" id="resTable"></table></div>
-    <span class="explain" id="exportMsg"></span>
-  </div>
-</section>
-
+    <h2>Cổng giáo viên quy đổi điểm</h2>
+    <p>Tổng hợp kết quả học sinh gửi từ Bài 5 và Bài 6, tự động tính phần trăm hoàn thành, quy đổi điểm cộng, chấm điểm trắc nghiệm và hỗ trợ xuất file Excel (CSV).</p>
+    <div class="card-footer" style="color: var(--amber);">Truy cập cổng giáo viên →</div>
+  </a>
 </main>
-<footer class="wrap">Trang ôn tập KHTN 8 · Bài 6 (Chương I: Phản ứng hóa học). Dùng để học sinh tự ôn ở nhà hoặc giáo viên trình chiếu trong tiết ôn tập.</footer>
 
-<script>
-(function(){
-const $=s=>document.querySelector(s);
-const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const vn=(x,d)=>{let s=(Math.round(x*Math.pow(10,d))/Math.pow(10,d)).toString();return s.replace('.',',');};
-const num=s=>parseFloat(String(s).trim().replace(',','.'));
-const near=(v,a)=>Math.abs(v-a)<=Math.max(0.006,Math.abs(a)*0.005);
+<footer class="wrap">
+  Trang ôn tập KHTN 8 · Hỗ trợ học tập trực tuyến
+</footer>
 
-/* ---------- tiến độ ---------- */
-const KEY='khtn8-b6-progress-v1';
-const blank=()=>({name:'',cls:'',kt:false,guided:[],drill:0,probs:[],quizBest:-1,quizTries:0,quizFirst:-1,probsSeen:[],real:[],min:0,dev:'',rs:0});
-let S=blank();
-try{const raw=localStorage.getItem(KEY);if(raw)S=Object.assign(blank(),JSON.parse(raw));}catch(e){}
-if(!S.dev)S.dev=Math.random().toString(36).slice(2,10);
-if(S.quizTries>0&&S.quizFirst<0)S.quizFirst=S.quizBest;
-const N_G=4,N_D=10,N_PROB=6,N_Q=13,N_REAL=5;
-function parts(){return [
-  {k:'Kiến thức và thực tiễn',v:(S.kt?1:0)+S.real.length,t:1+N_REAL,w:5,txt:(S.kt?'Đã học · ':'')+S.real.length+'/'+N_REAL+' câu thực tiễn'},
-  {k:'Giải từng bước',v:S.guided.length,t:N_G,w:20,txt:S.guided.length+'/'+N_G+' bài'},
-  {k:'Luyện công thức',v:Math.min(S.drill,N_D),t:N_D,w:10,txt:S.drill+'/'+N_D+' câu đúng'},
-  {k:'Bài tập vận dụng (tự làm đúng)',v:S.probs.length,t:N_PROB,w:25,txt:S.probs.length+'/'+N_PROB+' bài'},
-  {k:'Trắc nghiệm (lần nộp đầu)',v:Math.max(0,S.quizFirst),t:N_Q,w:40,txt:S.quizFirst<0?'Chưa làm':S.quizFirst+'/'+N_Q+' câu đúng'}
-];}
-const pctOf=p=>Math.round(p.reduce((a,x)=>a+x.w*Math.min(1,x.v/x.t),0));
-function renderProg(){
-  $('#progList').innerHTML=parts().map(p=>`<div class="it"><span>${p.k}</span><span>${p.txt}</span><div class="bar"><i style="width:${Math.round(100*Math.min(1,p.v/p.t))}%"></i></div></div>`).join('')+
-   `<div class="it"><span>Thời gian ôn tập</span><span>${Math.round(S.min)} phút</span></div>`;
-}
-function save(){
-  try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
-  const pc=pctOf(parts());$('#pctTop').textContent=pc+'%';$('#barTop').style.width=pc+'%';renderProg();
-}
-const addOnce=(arr,v)=>{if(!arr.includes(v)){arr.push(v);return true}return false};
-let lastAct=Date.now();
-['click','keydown','input','scroll','touchstart'].forEach(ev=>addEventListener(ev,()=>{lastAct=Date.now()},{passive:true}));
-setInterval(()=>{if(document.visibilityState==='visible'&&Date.now()-lastAct<120000){S.min+=0.5;save();}},30000);
-
-/* ---------- tabs ---------- */
-const tabs=[...document.querySelectorAll('[role=tab]')];
-function show(id){
-  if(!document.getElementById('p-'+id)||(id==='giaovien'&&$('#teacherTab').hidden)) id='kienthuc';
-  tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===id));
-  document.querySelectorAll('section.panel').forEach(p=>p.hidden=p.id!=='p-'+id);
-  try{history.replaceState(null,'','#'+id)}catch(e){}
-}
-tabs.forEach(t=>t.addEventListener('click',()=>{show(t.dataset.tab);window.scrollTo({top:0})}));
-show((location.hash||'').slice(1)||'kienthuc');
-$('#goSubmit').addEventListener('click',()=>{show('nopbai');document.querySelector('nav.tabs').scrollIntoView({behavior:reduce?'auto':'smooth'});});
-
-/* ---------- tỉ lệ mol ---------- */
-function ratio(){const n=+$('#alRange').value/10;
-  $('#alVal').textContent=vn(n,1);
-  const o=n*3/4,p=n/2;
-  $('#rAl').textContent=vn(n,3)+' mol';$('#mAl').textContent=vn(n*27,3)+' g';
-  $('#rO2').textContent=vn(o,3)+' mol';$('#mO2').textContent=vn(o*32,3)+' g';
-  $('#rAl2O3').textContent=vn(p,3)+' mol';$('#mAl2O3').textContent=vn(p*102,3)+' g';}
-$('#alRange').addEventListener('input',ratio);ratio();
-
-/* ---------- giải từng bước ---------- */
-const G=[
-  {t:'Cho 6,5 g zinc (Zn) tác dụng hết với dung dịch hydrochloric acid. Tính khối lượng zinc chloride (ZnCl₂) tạo thành.',eq:'Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub>',
-   s:[{l:'Bước 2: Tính số mol Zn.',a:0.1,u:'mol',h:'n = m : M = 6,5 : 65'},
-      {l:'Bước 3: Theo PTHH, tính số mol ZnCl₂.',a:0.1,u:'mol',h:'Hệ số của Zn và ZnCl₂ đều bằng 1, nên số mol bằng nhau.'},
-      {l:'Bước 4: Tính khối lượng ZnCl₂.',a:13.6,u:'g',h:'M(ZnCl₂) = 65 + 2 × 35,5 = 136 g/mol; m = n × M'}]},
-  {t:'Đốt cháy hoàn toàn 4,8 g magnesium (Mg) trong oxygen. Tính khối lượng magnesium oxide (MgO) thu được.',eq:'2Mg + O<sub>2</sub> → 2MgO',
-   s:[{l:'Bước 2: Tính số mol Mg.',a:0.2,u:'mol',h:'n = 4,8 : 24'},
-      {l:'Bước 3: Theo PTHH, tính số mol MgO.',a:0.2,u:'mol',h:'Tỉ lệ Mg : MgO = 2 : 2 = 1 : 1'},
-      {l:'Bước 4: Tính khối lượng MgO.',a:8,u:'g',h:'M(MgO) = 24 + 16 = 40 g/mol'}]},
-  {t:'Nung 25 g đá vôi (CaCO₃) đến khi phản ứng hoàn toàn. Tính thể tích khí carbon dioxide (CO₂) sinh ra ở đkc.',eq:'CaCO<sub>3</sub> → CaO + CO<sub>2</sub>',
-   s:[{l:'Bước 2: Tính số mol CaCO₃.',a:0.25,u:'mol',h:'M(CaCO₃) = 40 + 12 + 3 × 16 = 100 g/mol'},
-      {l:'Bước 3: Theo PTHH, tính số mol CO₂.',a:0.25,u:'mol',h:'Tỉ lệ CaCO₃ : CO₂ = 1 : 1'},
-      {l:'Bước 4: Tính thể tích CO₂ ở đkc.',a:6.1975,u:'L',h:'V = n × 24,79 (làm tròn 2 chữ số thập phân: 6,20 L)'}]},
-  {t:'Đốt cháy hoàn toàn 5,4 g aluminium (Al) trong oxygen. Tính khối lượng aluminium oxide (Al₂O₃) tạo thành.',eq:'4Al + 3O<sub>2</sub> → 2Al<sub>2</sub>O<sub>3</sub>',
-   s:[{l:'Bước 2: Tính số mol Al.',a:0.2,u:'mol',h:'n = 5,4 : 27'},
-      {l:'Bước 3: Theo PTHH, tính số mol Al₂O₃.',a:0.1,u:'mol',h:'Tỉ lệ Al : Al₂O₃ = 4 : 2, nên n(Al₂O₃) = n(Al) × 2 : 4'},
-      {l:'Bước 4: Tính khối lượng Al₂O₃.',a:10.2,u:'g',h:'M(Al₂O₃) = 2 × 27 + 3 × 16 = 102 g/mol'}]}
-];
-let gi=0,gstep=0;
-function renderGList(){
-  $('#gList').innerHTML=G.map((g,i)=>`<button data-i="${i}" class="${i===gi?'cur':''} ${S.guided.includes(i)?'done':''}" aria-label="Bài ${i+1}">${i+1}</button>`).join('');
-  $('#gList').querySelectorAll('button').forEach(b=>b.onclick=()=>{gi=+b.dataset.i;gstep=0;renderG();});
-}
-function renderG(){
-  renderGList();const g=G[gi];
-  $('#gTitle').textContent='Bài '+(gi+1);$('#gPos').textContent=`Hoàn thành ${S.guided.length}/${N_G} bài`;
-  $('#gText').textContent=g.t;$('#gEq').innerHTML='Bước 1: '+g.eq;
-  $('#gSteps').innerHTML=g.s.map((s,k)=>`<div class="gstep ${k<gstep?'ok':''}" ${k>gstep?'hidden':''}>
-    <span class="lbl">${s.l}</span>
-    <div class="row"><input id="gs${k}" inputmode="decimal" autocomplete="off" aria-label="${s.l}" ${k<gstep?`value="${vn(s.a,4)}" disabled`:''}><span>${s.u}</span>
-    ${k<gstep?'<span class="pill g">Đúng</span>':`<button class="btn primary" data-k="${k}" data-a="chk">Kiểm tra</button><button class="btn" data-k="${k}" data-a="hint">Gợi ý</button>`}</div>
-    <div id="gm${k}" hidden></div></div>`).join('')+(gstep>=g.s.length?'<div class="msg good">Hoàn thành bài này. Em đã giải đúng cả 4 bước.</div>':'');
-  const inp=$('#gs'+gstep);if(inp&&document.activeElement&&document.activeElement.closest&&document.activeElement.closest('#gSteps'))inp.focus();
-}
-$('#gSteps').addEventListener('click',ev=>{
-  const b=ev.target.closest('button[data-a]');if(!b)return;const k=+b.dataset.k,s=G[gi].s[k],m=$('#gm'+k);m.hidden=false;
-  if(b.dataset.a==='hint'){m.className='msg info';m.textContent='Gợi ý: '+s.h;return;}
-  const v=num($('#gs'+k).value);
-  if(isNaN(v)){m.className='msg bad';m.textContent='Em hãy nhập một số.';return;}
-  if(near(v,s.a)){gstep=k+1;if(gstep>=G[gi].s.length&&addOnce(S.guided,gi))save();renderG();const nx=$('#gs'+gstep);if(nx)nx.focus();}
-  else{m.className='msg bad';m.textContent='Chưa đúng. Em kiểm tra lại phép tính hoặc bấm Gợi ý.';}
-});
-$('#gNext').onclick=()=>{gi=(gi+1)%G.length;gstep=0;renderG();};
-renderG();
-
-/* ---------- luyện công thức ---------- */
-const SUB=f=>f.replace(/(\d+)/g,'<sub>$1</sub>');
-const SOLIDS=[['H2O',18,'nước'],['NaCl',58.5,'sodium chloride'],['CaCO3',100,'calcium carbonate'],['Fe',56,'iron'],['Cu',64,'copper'],['Al',27,'aluminium'],['Mg',24,'magnesium'],['Zn',65,'zinc'],['NaOH',40,'sodium hydroxide'],['H2SO4',98,'sulfuric acid'],['CuO',80,'copper(II) oxide'],['MgO',40,'magnesium oxide']];
-const GASES=[['O2',32,'oxygen'],['H2',2,'hydrogen'],['CO2',44,'carbon dioxide'],['N2',28,'nitrogen'],['CH4',16,'methane']];
-const NS=[0.05,0.1,0.15,0.2,0.25,0.3,0.4,0.5,0.6,0.75,1.5,2];
-const pick=a=>a[Math.floor(Math.random()*a.length)];
-let D=null;
-function newDrill(){
-  const type=Math.floor(Math.random()*5),n=pick(NS);
-  if(type<=1){const [f,M,nm]=pick(SOLIDS);
-    if(type===0)D={q:`Tính số mol của <b>${vn(n*M,3)} g</b> ${SUB(f)} (${nm}).`,a:n,u:'mol',h:`n = m : M; M(${f}) = ${vn(M,1)} g/mol`};
-    else D={q:`Tính khối lượng của <b>${vn(n,2)} mol</b> ${SUB(f)} (${nm}).`,a:n*M,u:'g',h:`m = n × M; M(${f}) = ${vn(M,1)} g/mol`};}
-  else if(type===2){const [f,M,nm]=pick(GASES);D={q:`Tính thể tích của <b>${vn(n,2)} mol</b> khí ${SUB(f)} (${nm}) ở đkc.`,a:n*24.79,u:'L',h:'V = n × 24,79'};}
-  else if(type===3){const [f,M,nm]=pick(GASES);D={q:`Tính số mol của <b>${vn(n*24.79,4)} L</b> khí ${SUB(f)} (${nm}) ở đkc.`,a:n,u:'mol',h:'n = V : 24,79'};}
-  else{const [f,M,nm]=pick(GASES);D={q:`Tính thể tích ở đkc của <b>${vn(n*M,3)} g</b> khí ${SUB(f)} (${nm}).`,a:n*24.79,u:'L',h:`Tính n = m : M trước (M(${f}) = ${M} g/mol), rồi V = n × 24,79`};}
-  $('#drillQ').innerHTML=D.q;$('#drillU').textContent=D.u;$('#drillA').value='';$('#drillMsg').hidden=true;D.done=false;
-}
-function drillMsg(t,c){const m=$('#drillMsg');m.hidden=false;m.className='msg '+c;m.innerHTML=t;}
-const paintDrill=()=>$('#drillCount').textContent=`Đúng ${S.drill}/${N_D}`+(S.drill>=N_D?' · Hoàn thành':'');
-$('#drillCheck').onclick=()=>{
-  const v=num($('#drillA').value);if(isNaN(v)){drillMsg('Em hãy nhập một số.','bad');return;}
-  if(near(v,D.a)){if(!D.done){D.done=true;S.drill++;save();paintDrill();}drillMsg(`Đúng rồi! Đáp số: ${vn(D.a,4)} ${D.u}. Bấm <b>Câu khác</b> để làm tiếp.`,'good');}
-  else drillMsg('Chưa đúng. Em thử lại hoặc bấm Gợi ý.','bad');
-};
-$('#drillA').addEventListener('keydown',e=>{if(e.key==='Enter')$('#drillCheck').click();});
-$('#drillHint').onclick=()=>drillMsg('Gợi ý: '+D.h,'info');
-$('#drillNew').onclick=newDrill;
-newDrill();paintDrill();
-
-/* ---------- bài tập vận dụng ---------- */
-const PROBS=[
-  {lv:'th',q:'Cho 2,7 g aluminium tác dụng với dung dịch hydrochloric acid dư: 2Al + 6HCl → 2AlCl₃ + 3H₂. Tính thể tích khí hydrogen thu được ở đkc.',u:'L',a:3.7185,s:'n<sub>Al</sub> = 2,7 : 27 = 0,1 mol ⇒ n<sub>H₂</sub> = 0,1 × 3 : 2 = 0,15 mol ⇒ V = 0,15 × 24,79 = <b>3,72 L</b>.'},
-  {lv:'th',q:'Đốt cháy hoàn toàn 3,2 g sulfur trong oxygen: S + O₂ → SO₂. Tính khối lượng sulfur dioxide tạo thành.',u:'g',a:6.4,s:'n<sub>S</sub> = 3,2 : 32 = 0,1 mol ⇒ n<sub>SO₂</sub> = 0,1 mol ⇒ m = 0,1 × 64 = <b>6,4 g</b>.'},
-  {lv:'vd',q:'Nhiệt phân potassium chlorate: 2KClO₃ → 2KCl + 3O₂. Tính khối lượng KClO₃ cần dùng để điều chế 7,437 L khí oxygen ở đkc.',u:'g',a:24.5,s:'n<sub>O₂</sub> = 7,437 : 24,79 = 0,3 mol ⇒ n<sub>KClO₃</sub> = 0,3 × 2 : 3 = 0,2 mol. M(KClO₃) = 39 + 35,5 + 48 = 122,5 g/mol ⇒ m = <b>24,5 g</b>.'},
-  {lv:'vd',q:'Cho 0,2 mol zinc tác dụng với dung dịch chứa 0,3 mol HCl: Zn + 2HCl → ZnCl₂ + H₂. Tính số mol khí hydrogen thu được.',u:'mol',a:0.15,s:'So sánh: Zn: 0,2 : 1 = 0,2; HCl: 0,3 : 2 = 0,15 ⇒ HCl phản ứng hết, Zn dư. Tính theo HCl: n<sub>H₂</sub> = 0,3 : 2 = <b>0,15 mol</b>.'},
-  {lv:'vd',q:'Nung 50 g CaCO₃ thu được 22,4 g CaO: CaCO₃ → CaO + CO₂. Tính hiệu suất của phản ứng (nhập số phần trăm).',u:'%',a:80,s:'n<sub>CaCO₃</sub> = 0,5 mol ⇒ CaO lí thuyết = 0,5 × 56 = 28 g. H = 22,4 : 28 × 100% = <b>80%</b>.'},
-  {lv:'vd',q:'Đốt 4,8 g magnesium trong oxygen với hiệu suất 90%: 2Mg + O₂ → 2MgO. Tính khối lượng MgO thực tế thu được.',u:'g',a:7.2,s:'n<sub>Mg</sub> = 0,2 mol ⇒ MgO lí thuyết = 0,2 × 40 = 8 g. Thực tế = 8 × 90% = <b>7,2 g</b>.'}
-];
-$('#probs').innerHTML=PROBS.map((p,i)=>`<div class="prob">
-  <div class="row"><span class="tag ${p.lv}">${p.lv==='th'?'Thông hiểu':'Vận dụng'}</span><b>Bài ${i+1}</b></div>
-  <p>${p.q}</p>
-  <div class="row"><label for="pa${i}">Đáp số:</label><input id="pa${i}" inputmode="decimal" autocomplete="off"><span>${p.u}</span><button class="btn primary" data-i="${i}" data-act="check">Kiểm tra</button><button class="btn" data-i="${i}" data-act="sol">Xem lời giải</button></div>
-  <div id="pm${i}" hidden></div></div>`).join('');
-$('#probs').addEventListener('click',ev=>{
-  const b=ev.target.closest('button');if(!b)return;const i=+b.dataset.i,p=PROBS[i],out=$('#pm'+i);out.hidden=false;
-  if(b.dataset.act==='sol'){if(!S.probs.includes(i)&&addOnce(S.probsSeen,i))save();out.className='msg info';out.innerHTML=p.s+(S.probs.includes(i)?'':'<br><i>Em đã xem lời giải nên bài này không được tính điểm.</i>');return;}
-  const v=num($('#pa'+i).value);
-  if(isNaN(v)){out.className='msg bad';out.textContent='Em hãy nhập một số.';return;}
-  if(near(v,p.a)){if(S.probsSeen.includes(i)&&!S.probs.includes(i)){out.className='msg info';out.textContent='Đúng rồi, nhưng em đã xem lời giải trước nên bài này không được tính điểm.';return;}if(addOnce(S.probs,i))save();out.className='msg good';out.innerHTML='Đúng rồi! '+p.s;}
-  else{out.className='msg bad';out.textContent='Chưa đúng. Gợi ý: làm theo 4 bước, chú ý tỉ lệ hệ số trong PTHH.';}
-});
-
-/* ---------- trắc nghiệm ---------- */
-const Q=[
-  {lv:'nb',q:'Công thức tính số mol chất khi biết khối lượng là:',o:['n = m × M','n = M : m','n = m : M','n = m + M'],a:2,e:'n = m : M, trong đó m là khối lượng (g), M là khối lượng mol (g/mol).'},
-  {lv:'nb',q:'Ở điều kiện chuẩn (25 °C, 1 bar), 1 mol khí bất kì chiếm thể tích là:',o:['22,4 L','24,79 L','24 L','1 L'],a:1,e:'Thể tích mol khí ở đkc là 24,79 L/mol.'},
-  {lv:'nb',q:'Bước đầu tiên khi giải bài toán tính theo phương trình hóa học là:',o:['Tính số mol chất đã biết.','Viết phương trình hóa học.','Tính khối lượng chất cần tìm.','Tính hiệu suất.'],a:1,e:'Phải có PTHH đã cân bằng mới biết tỉ lệ số mol giữa các chất.'},
-  {lv:'nb',q:'Công thức tính hiệu suất phản ứng là:',o:['H = lí thuyết : thực tế × 100%','H = thực tế : lí thuyết × 100%','H = thực tế × lí thuyết','H = thực tế − lí thuyết'],a:1,e:'H = lượng sản phẩm thực tế : lượng sản phẩm lí thuyết × 100%.'},
-  {lv:'th',q:'Theo PTHH 2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O, để đốt cháy hết 0,4 mol H<sub>2</sub> cần bao nhiêu mol O<sub>2</sub>?',o:['0,4 mol','0,8 mol','0,2 mol','0,1 mol'],a:2,e:'Tỉ lệ H₂ : O₂ = 2 : 1 ⇒ n(O₂) = 0,4 : 2 = 0,2 mol.'},
-  {lv:'th',q:'Khối lượng của 0,25 mol CaCO<sub>3</sub> là:',o:['25 g','40 g','2,5 g','100 g'],a:0,e:'M(CaCO₃) = 100 g/mol ⇒ m = 0,25 × 100 = 25 g.'},
-  {lv:'th',q:'Thể tích của 0,5 mol khí CO<sub>2</sub> ở đkc là:',o:['11,2 L','12,395 L','24,79 L','22 L'],a:1,e:'V = 0,5 × 24,79 = 12,395 L.'},
-  {lv:'th',q:'Nhận định nào sau đây về hiệu suất phản ứng là đúng?',o:['Luôn lớn hơn 100%.','Luôn bằng 100%.','Luôn nhỏ hơn hoặc bằng 100%.','Có thể là số âm.'],a:2,e:'Lượng thực tế không thể vượt lượng lí thuyết nên H ≤ 100%.'},
-  {lv:'th',q:'Khi một chất tham gia còn dư sau phản ứng, lượng sản phẩm được tính theo:',o:['Chất dư.','Chất phản ứng hết.','Chất có khối lượng lớn hơn.','Trung bình của hai chất.'],a:1,e:'Chất phản ứng hết quyết định lượng sản phẩm tạo thành.'},
-  {lv:'vd',q:'Cho 5,6 g iron tác dụng với dung dịch HCl dư: Fe + 2HCl → FeCl<sub>2</sub> + H<sub>2</sub>. Thể tích H<sub>2</sub> thu được ở đkc là:',o:['4,958 L','2,479 L','1,2395 L','24,79 L'],a:1,e:'n(Fe) = 5,6 : 56 = 0,1 mol = n(H₂) ⇒ V = 0,1 × 24,79 = 2,479 L.'},
-  {lv:'vd',q:'Đốt cháy hoàn toàn 2,4 g carbon: C + O<sub>2</sub> → CO<sub>2</sub>. Khối lượng CO<sub>2</sub> tạo thành là:',o:['4,4 g','8,8 g','2,4 g','6,4 g'],a:1,e:'n(C) = 2,4 : 12 = 0,2 mol = n(CO₂) ⇒ m = 0,2 × 44 = 8,8 g.'},
-  {lv:'vd',q:'Cho 0,3 mol Mg phản ứng với 0,2 mol O<sub>2</sub>: 2Mg + O<sub>2</sub> → 2MgO. Sau phản ứng:',o:['Mg dư 0,1 mol.','O<sub>2</sub> dư 0,05 mol.','O<sub>2</sub> dư 0,1 mol.','Hai chất phản ứng vừa đủ.'],a:1,e:'Mg: 0,3 : 2 = 0,15 < O₂: 0,2 : 1 = 0,2 ⇒ Mg hết. O₂ phản ứng 0,15 mol, dư 0,2 − 0,15 = 0,05 mol.'},
-  {lv:'vd',q:'Theo lí thuyết một phản ứng tạo ra 20 g sản phẩm, thực tế thu được 15 g. Hiệu suất phản ứng là:',o:['75%','80%','133%','25%'],a:0,e:'H = 15 : 20 × 100% = 75%.'}
-];
-const LV={nb:['Nhận biết',''],th:['Thông hiểu','th'],vd:['Vận dụng','vd']};
-function renderQuiz(){
-  $('#quiz').innerHTML=Q.map((q,i)=>`<div class="q" id="q${i}">
-    <div class="qh"><span class="num">Câu ${i+1}.</span><span class="tag ${LV[q.lv][1]}">${LV[q.lv][0]}</span></div>
-    <p>${q.q}</p>
-    <div class="opts">${q.o.map((o,j)=>`<label><input type="radio" name="q${i}" id="q${i}o${j}" value="${j}"><span><b>${'ABCD'[j]}.</b>${o}</span></label>`).join('')}</div>
-    <p class="explain" hidden></p></div>`).join('');
-  const so=$('#scoreOut');so.className='explain';so.innerHTML=S.quizFirst<0?'Chưa nộp bài. Chỉ lần nộp đầu tiên được tính điểm.':`Điểm được tính (lần đầu): <b>${S.quizFirst}/${N_Q}</b>. Lần làm này là luyện lại, không tính điểm.`;
-  const sb=$('#submitQuiz');sb.disabled=false;sb.dataset.done='';$('#resetQuiz').hidden=true;submitArm=0;
-}
-function lockQuiz(lock){document.querySelectorAll('#quiz input').forEach(x=>x.disabled=lock);}
-let submitArm=0;
-$('#submitQuiz').onclick=()=>{
-  const btn=$('#submitQuiz');if(btn.dataset.done==='1')return;
-  const first=S.quizFirst<0,out=$('#scoreOut');
-  const blankN=Q.filter((q,i)=>!$('#q'+i).querySelector('input:checked')).length;
-  if(first&&Date.now()-submitArm>6000){submitArm=Date.now();out.className='msg info';out.innerHTML=(blankN?`Em còn <b>${blankN}</b> câu chưa chọn. `:'')+'Chỉ <b>lần nộp đầu tiên</b> được tính điểm. Bấm <b>Nộp bài</b> lần nữa để xác nhận.';return;}
-  let right=0;
-  Q.forEach((q,i)=>{const box=$('#q'+i);const sel=box.querySelector('input:checked');
-    box.querySelectorAll('label').forEach((l,j)=>{l.classList.remove('right','wrong');if(j===q.a)l.classList.add('right');});
-    if(sel){if(+sel.value===q.a)right++;else sel.closest('label').classList.add('wrong');}
-    const ex=box.querySelector('.explain');ex.hidden=false;ex.innerHTML='Giải thích: '+q.e;});
-  lockQuiz(true);btn.dataset.done='1';btn.disabled=true;$('#resetQuiz').hidden=false;
-  S.quizTries++;S.quizBest=Math.max(S.quizBest,right);if(first)S.quizFirst=right;save();
-  const d=x=>(x/Q.length*10).toFixed(1).replace('.',',');
-  out.className='';
-  out.innerHTML=first?`<span class="big">${right}/${Q.length}</span> câu đúng · Điểm: <b>${d(right)}</b> · Đã ghi nhận điểm lần đầu.`
-    :`Lần luyện lại: <b>${right}/${Q.length}</b> câu đúng (không tính điểm). Điểm được tính vẫn là lần đầu: <b>${S.quizFirst}/${Q.length}</b>.`;
-};
-$('#resetQuiz').onclick=()=>{renderQuiz();$('#quiz').scrollIntoView({behavior:reduce?'auto':'smooth'});};
-renderQuiz();
-
-/* ---------- mốc tiến độ khác ---------- */
-const ktBtn=$('#ktDone');
-const paintKt=()=>{ktBtn.classList.toggle('on',S.kt);ktBtn.textContent=S.kt?'✓ Đã học xong phần kiến thức':'Em đã học xong phần kiến thức';};
-ktBtn.onclick=()=>{S.kt=!S.kt;save();paintKt();};paintKt();
-document.querySelectorAll('#p-thuctien details').forEach((d,i)=>d.addEventListener('toggle',()=>{if(d.open&&addOnce(S.real,i))save();}));
-const nameIn=$('#stName'),clsIn=$('#stClass');
-nameIn.value=S.name;clsIn.value=S.cls;
-nameIn.addEventListener('input',()=>{S.name=nameIn.value;save();});
-clsIn.addEventListener('input',()=>{S.cls=clsIn.value.toUpperCase().replace(/\s+/g,'');clsIn.value=S.cls;save();});
-
-/* ---------- mã kết quả ---------- */
-const PREFIX='KHTN8B6',SALT='khtn8|bai6|tinh-theo-pthh';
-function fnv(str){let h=0x811c9dc5;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,0x01000193)>>>0;}return h.toString(16).padStart(8,'0');}
-const b64e=s=>btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-const b64d=s=>{s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return decodeURIComponent(escape(atob(s)));};
-function makeCode(){
-  const p={v:2,z:S.rs||0,f:S.quizFirst,s:S.probsSeen.length,x:S.dev,n:S.name.trim().replace(/\s+/g,' '),l:S.cls.trim(),k:S.kt?1:0,g:S.guided.length,w:S.drill,p:S.probs.length,q:S.quizBest,t:S.quizTries,r:S.real.length,m:Math.round(S.min),d:Math.floor(Date.now()/60000)};
-  const body=b64e(JSON.stringify(p));return PREFIX+'-'+body+'.'+fnv(SALT+body);
-}
-function readCode(code){
-  const m=new RegExp('^'+PREFIX+'-([A-Za-z0-9_-]+)\\.([0-9a-f]{8})$').exec(code);if(!m)return null;
-  if(fnv(SALT+m[1])!==m[2])return null;
-  try{const p=JSON.parse(b64d(m[1]));if(!p||typeof p.n!=='string'||typeof p.l!=='string')return null;return p;}catch(e){return null;}
-}
-function cmsg(t,cls){const m=$('#codeMsg');m.hidden=false;m.className='msg '+cls;m.textContent=t;}
-let lastCode='';
-$('#makeCode').onclick=()=>{
-  if(S.name.trim().length<3){cmsg('Em hãy điền họ và tên ở đầu trang trước khi tạo mã.','bad');nameIn.focus();return;}
-  if(!S.cls.trim()){cmsg('Em hãy điền lớp ở đầu trang trước khi tạo mã.','bad');clsIn.focus();return;}
-  lastCode=makeCode();$('#codeBox').hidden=false;$('#codeBox').textContent=lastCode;$('#copyCode').hidden=false;
-  cmsg(`Đã tạo mã cho ${S.name.trim()} – lớp ${S.cls}. Mức hoàn thành: ${pctOf(parts())}%.`,'good');
-};
-$('#copyCode').onclick=()=>{
-  const sel=()=>{const r=document.createRange();r.selectNodeContents($('#codeBox'));const s=getSelection();s.removeAllRanges();s.addRange(r);};
-  try{navigator.clipboard.writeText(lastCode).then(()=>cmsg('Đã sao chép mã. Em dán vào tin nhắn gửi giáo viên nhé.','good'),()=>{sel();cmsg('Mã đã được bôi đen, em nhấn giữ hoặc Ctrl+C để sao chép.','info');});}
-  catch(e){sel();cmsg('Mã đã được bôi đen, em nhấn giữ hoặc Ctrl+C để sao chép.','info');}
-};
-let resetArm=0;
-$('#resetAll').onclick=()=>{
-  const b=$('#resetAll');
-  if(Date.now()-resetArm>4000){resetArm=Date.now();b.textContent='Bấm lần nữa để xác nhận xóa';setTimeout(()=>{b.textContent='Xóa tiến độ trên máy này'},4000);return;}
-  const dv=S.dev,rs=(S.rs||0)+1;S=blank();S.dev=dv;S.rs=rs;save();nameIn.value='';clsIn.value='';paintKt();gstep=0;renderG();paintDrill();renderQuiz();$('#codeBox').hidden=true;$('#copyCode').hidden=true;
-  b.textContent='Xóa tiến độ trên máy này';cmsg('Đã xóa tiến độ. Em có thể bắt đầu lại từ đầu.','info');
-};
-save();
-
-/* ---------- bảng giáo viên & quy đổi điểm cộng ---------- */
-let bonusRules=[{min:90,pts:1},{min:70,pts:0.5}];
-const bonusOf=pc=>{for(const r of [...bonusRules].sort((a,b)=>b.min-a.min))if(pc>=r.min)return r.pts;return 0;};
-const fmtPts=x=>String(Math.round(x*100)/100).replace('.',',');
-function paintBonusInputs(){const rs=[...bonusRules].sort((a,b)=>b.min-a.min);for(let i=0;i<3;i++){$('#bm'+i).value=rs[i]?rs[i].min:'';$('#bp'+i).value=rs[i]?fmtPts(rs[i].pts):'';}}
-$('#saveBonus').onclick=async()=>{
-  const out=[];
-  for(let i=0;i<3;i++){const a=$('#bm'+i).value.trim(),b=$('#bp'+i).value.trim();if(!a&&!b)continue;
-    const m=num(a),p=num(b);
-    if(isNaN(m)||m<0||m>100){$('#bonusMsg').textContent=`Dòng ${i+1}: mức phần trăm phải từ 0 đến 100.`;return;}
-    if(isNaN(p)||p<0||p>10){$('#bonusMsg').textContent=`Dòng ${i+1}: điểm cộng phải là số từ 0 đến 10.`;return;}
-    out.push({min:m,pts:p});}
-  bonusRules=out;
-  if(db){try{await db.doc('config/bonus').set({rules:out});}catch(e){$('#bonusMsg').textContent='Chưa lưu được, hãy thử lại.';return;}}
-  paintBonusInputs();renderTeacher();$('#bonusMsg').textContent=db?'Đã lưu. Bảng và file tải về dùng mức mới.':'Đã áp dụng cho lần mở này.';
-};
-
-const fqOf=r=>(typeof r.f==='number'&&r.f>=0)?r.f:(r.t>0?r.q:-1);
-const pctFromPayload=p=>pctOf([{v:p.k+p.r,t:1+N_REAL,w:5},{v:p.g,t:N_G,w:20},{v:Math.min(p.w,N_D),t:N_D,w:10},{v:p.p,t:N_PROB,w:25},{v:Math.max(0,fqOf(p)),t:N_Q,w:40}]);
-const slug=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'hs';
-let rows=new Map(),db=null,downloads=null;
-const fmtTime=d=>{const t=new Date(d*60000);return t.toLocaleDateString('vi-VN',{day:'2-digit',month:'2-digit'})+' '+t.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});};
-function viewRows(){const f=$('#clsFilter').value;return [...rows.values()].filter(r=>!f||r.l===f).sort((a,b)=>a.l.localeCompare(b.l,'vi')||a.n.split(' ').pop().localeCompare(b.n.split(' ').pop(),'vi')||a.n.localeCompare(b.n,'vi'));}
-function renderTeacher(){
-  const sel=$('#clsFilter'),keep=sel.value,classes=[...new Set([...rows.values()].map(r=>r.l))].sort((a,b)=>a.localeCompare(b,'vi'));
-  sel.innerHTML='<option value="">Tất cả các lớp</option>'+classes.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
-  sel.value=classes.includes(keep)?keep:'';
-  const v=viewRows(),n=v.length;
-  const quizzed=v.filter(r=>fqOf(r)>=0);
-  const qAvg=quizzed.length?quizzed.reduce((a,r)=>a+fqOf(r),0)/quizzed.length/N_Q*10:0;
-  $('#tiles').innerHTML=[
-    ['Học sinh đã gửi',n],['Mức hoàn thành TB',(n?Math.round(v.reduce((a,r)=>a+pctFromPayload(r),0)/n):0)+'%'],
-    ['Được cộng điểm',v.filter(r=>bonusOf(pctFromPayload(r))>0).length],['Điểm TN trung bình',quizzed.length?qAvg.toFixed(1).replace('.',','):'–']
-  ].map(([k,val])=>`<div class="tile"><div class="k">${k}</div><div class="v">${val}</div></div>`).join('');
-  if(!n){$('#resTable').innerHTML='<tr><td class="explain">Chưa có kết quả nào. Dán mã học sinh gửi vào ô phía trên để bắt đầu.</td></tr>';return;}
-  $('#resTable').innerHTML='<tr><th>#</th><th>Họ và tên</th><th>Lớp</th><th>Mức hoàn thành</th><th>Điểm cộng</th><th>Từng bước</th><th>Công thức</th><th>Bài tập</th><th>TN lần đầu</th><th>Thời gian</th><th>Gửi lúc</th><th></th></tr>'+
-    v.map((r,i)=>{const pc=pctFromPayload(r),cls=pc>=80?'g':pc>=40?'m':'b';
-      const fq=fqOf(r),qd=fq>=0?`${fq}/${N_Q} <span class="explain">(${(fq/N_Q*10).toFixed(1).replace('.',',')}đ${r.t>1?' · luyện thêm '+(r.t-1)+' lần':''})</span>`:'<span class="explain">chưa làm</span>';
-      return `<tr><td>${i+1}</td><td><b>${esc(r.n)}</b>${(r.devs||[]).length>1?` <span class="pill m" title="Gửi mã từ nhiều máy khác nhau, có thể đã làm lại trắc nghiệm">${r.devs.length} máy</span>`:''}${r.z>0?` <span class="pill m" title="Học sinh đã bấm xóa tiến độ rồi làm lại">xóa làm lại ${r.z} lần</span>`:''}</td><td>${esc(r.l)}</td><td><span class="minibar"><i style="width:${pc}%"></i></span><span class="pill ${cls}">${pc}%</span></td><td class="n"><b>+${fmtPts(bonusOf(pc))}</b></td><td class="n">${r.g}/${N_G}</td><td class="n">${r.w}/${N_D}</td><td class="n">${r.p}/${N_PROB}</td><td>${qd}</td><td class="n">${r.m} ph</td><td>${fmtTime(r.d)}</td><td><button class="linkbtn" data-del="${esc(r.id)}">Xóa</button></td></tr>`;}).join('');
-}
-$('#clsFilter').addEventListener('change',renderTeacher);
-$('#resTable').addEventListener('click',async ev=>{
-  const b=ev.target.closest('[data-del]');if(!b)return;
-  if(b.dataset.arm!=='1'){b.dataset.arm='1';b.textContent='Xác nhận?';setTimeout(()=>{b.dataset.arm='';b.textContent='Xóa'},4000);return;}
-  const id=b.dataset.del;
-  if(db){try{await db.collection('results').doc(id).delete();}catch(e){$('#addMsg').textContent='Chưa xóa được, hãy thử lại sau.';return;}}
-  rows.delete(id);renderTeacher();
-});
-$('#addCodes').onclick=async()=>{
-  const txt=$('#pasteBox').value,found=txt.match(new RegExp(PREFIX+'-[A-Za-z0-9_-]+\\.[0-9a-f]{8}','g'))||[];
-  if(!found.length){$('#addMsg').textContent=/KHTN8B\d+-/.test(txt)?'Các mã này thuộc bài khác. Hãy dán vào trang của bài tương ứng.':'Không tìm thấy mã nào. Mã của bài này bắt đầu bằng '+PREFIX+'-';return;}
-  let added=0,bad=0,older=0;
-  for(const code of found){
-    const p=readCode(code);if(!p){bad++;continue;}
-    p.id=slug(p.l)+'_'+slug(p.n);
-    const old=rows.get(p.id);
-    const devs=[...new Set([...((old&&old.devs)||[]),...(p.x?[p.x]:[])])];
-    if(old&&old.d>p.d){if(devs.length>(old.devs||[]).length){const o2=Object.assign({},old,{devs});if(db){try{await db.collection('results').doc(p.id).set(o2);}catch(e){}}rows.set(p.id,o2);}older++;continue;}
-    p.devs=devs;
-    if(old&&(old.z||0)>(p.z||0))p.z=old.z;
-    if(old&&fqOf(old)>=0)p.f=fqOf(old);
-    if(db){try{await db.collection('results').doc(p.id).set(p);}catch(e){bad++;continue;}}
-    rows.set(p.id,p);added++;
-  }
-  $('#addMsg').textContent=`Đã thêm hoặc cập nhật ${added} kết quả`+(older?`, bỏ qua ${older} mã cũ hơn`:'')+(bad?`, ${bad} mã không hợp lệ (bị sửa hoặc thiếu ký tự)`:'')+'.';
-  if(added)$('#pasteBox').value='';
-  renderTeacher();
-};
-$('#exportCsv').onclick=async()=>{
-  const v=viewRows();if(!v.length){$('#exportMsg').textContent='Chưa có dữ liệu để tải.';return;}
-  const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
-  const head=['STT','Họ và tên','Lớp','Mức hoàn thành (%)','Điểm cộng','Kiến thức','Giải từng bước (/4)','Luyện công thức (câu đúng)','Bài tập vận dụng (/6)','Trắc nghiệm lần đầu (/13)','Điểm trắc nghiệm lần đầu (/10)','Số lần làm trắc nghiệm','Liên hệ thực tiễn (/5)','Thời gian (phút)','Gửi lúc','Số máy đã gửi'];
-  const lines=[head.map(q).join(',')].concat(v.map((r,i)=>[i+1,r.n,r.l,pctFromPayload(r),bonusOf(pctFromPayload(r)),r.k?'Đã học':'Chưa',r.g,r.w,r.p,fqOf(r)>=0?fqOf(r):'',fqOf(r)>=0?(fqOf(r)/N_Q*10).toFixed(1):'',r.t,r.r,r.m,fmtTime(r.d),(r.devs||[]).length||1].map(q).join(',')));
-  if(!downloads){$('#exportMsg').textContent='Trình xem này không cho tải tệp.';return;}
-  try{await downloads.save({filename:'ket-qua-bai6-khtn8'+($('#clsFilter').value?'-'+$('#clsFilter').value:'')+'.csv',data:'﻿'+lines.join('\r\n')});$('#exportMsg').textContent='';}
-  catch(e){$('#exportMsg').textContent=e&&e.code==='declined'?'Đã hủy tải.':'Chưa tải được tệp.';}
-};
-(async()=>{
-  if(!window.claude||!claude.use)return;
-  const user=await claude.use('user');
-  if(!(user&&await user.isOwner()))return;
-  $('#teacherTab').hidden=false;paintBonusInputs();
-  if((location.hash||'').slice(1)==='giaovien')show('giaovien');
-  downloads=await claude.use('downloads');
-  if(!downloads)$('#exportCsv').hidden=true;
-  db=await claude.use('db');
-  if(!db){$('#dbNote').textContent='Lưu ý: lần mở này không kết nối được kho lưu trữ, kết quả chỉ giữ đến khi đóng trang.';renderTeacher();return;}
-  db.doc('config/bonus').onSnapshot(sn=>{const d=sn.exists&&sn.data();if(d&&Array.isArray(d.rules)){bonusRules=d.rules.map(r=>({min:+r.min,pts:+r.pts}));paintBonusInputs();renderTeacher();}},()=>{});
-  $('#dbNote').textContent='Kết quả được lưu lại cho lần mở sau và chỉ giáo viên xem được.';
-  db.collection('results').onSnapshot(snap=>{rows=new Map(snap.docs.map(d=>[d.id,Object.assign({},d.data(),{id:d.id})]));renderTeacher();},()=>{$('#dbNote').textContent='Mất kết nối kho lưu trữ. Hãy tải lại trang để xem dữ liệu mới nhất.';});
-  renderTeacher();
-})();
-})();
-</script>
 </body>
 </html>
